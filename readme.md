@@ -45,3 +45,10 @@ Upon successful submission of the form, a pop-up message will appear, confirming
 In case of validation errors or missing required information, error messages will be displayed near the respective form fields. These error messages guide the user in correcting their input and ensure that all necessary information is provided for a successful payment.
 
 With this design and layout, the payment gateway front-end project delivers an interactive and intuitive user experience, making the process of entering card details seamless and secure.
+
+## Future Improvements
+As usual, I have left options for future improvements deliberately so that developers can have something different while trying out this project.
+1. The card number can be fixed in a way to make it have a space after each 4 digits.
+2. For security we can add a hide icon, after clicking hides the card numbers with stars, revealing only a few that are stated to show.
+3. The Month and Year can be fixed in a way that when the months is less than 10, it shows as eg. 09.
+4. There is a compulsory slash between the month and the year.
