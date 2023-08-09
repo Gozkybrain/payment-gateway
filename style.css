@@ -1,0 +1,154 @@
+body {
+    background-color: #fff;
+}
+
+/* .myMsg {
+  position: relative;
+  top: 0;
+  left: 0;
+} */
+
+.pageCover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 1px 3px 3px grey;
+  padding: 10px;
+  z-index: 9999;
+  background-color: #ffffff;
+  min-width: 80%; /* Set a minimum width for the centered div */
+}
+
+
+/* Styling for the card */
+.card {
+    /* background-color: #d3d3d3; */
+    border: 0px solid;
+    border-radius: 10px; /* Add rounded corners to the card */
+    position: relative; /* Position the card relative to its normal position */
+    width: 100%; /* Set the width of the card */
+    height: 300px; /* Set the height of the card */
+    perspective: 1000px; /* Create a 3D space for the card with a depth perspective of 1000 pixels */
+    margin: 20px auto; /* Center the card horizontally */
+  }
+  
+  /* Styling for the front and back of the card */
+  .front,
+  .back {
+    border: 1px solid #3b5998;
+    background-color: #6ca3de;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./overlay.png);
+    position: absolute; /* Position the front and back elements absolutely within the card */
+    top: 0; /* Position them at the top of the card */
+    left: 0; /* Position them at the left of the card */
+    width: 100%; /* Set the width to 100% to fill the card's width */
+    height: 100%; /* Set the height to 100% to fill the card's height */
+    backface-visibility: hidden; /* Hide the backface of the card */
+    transform-style: preserve-3d; /* Preserve the 3D transformations on the card */
+    transition: transform 0.6s; /* Add a smooth transition effect when transforming the card */
+    border-radius: 10px; /* Add rounded corners to the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow to the card for a subtle elevation effect */
+    /* background: linear-gradient(135deg, #3498db, #0088cc); */    /* Apply a linear gradient background to the card */
+  }
+  
+  /* Styling for the front of the card */
+  .front {
+    transform: rotateY(0); /* Set the initial rotation of the front side to 0 degrees */
+    padding: 20px; /* Add padding to the front side for spacing */
+  }
+  
+  /* Styling for the back of the card */
+  .back {
+    transform: rotateY(180deg); /* Set the initial rotation of the back side to 180 degrees (flipped) */
+    display: fl ex; /* Use flexbox to align content vertically and horizontally */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 20px; /* Add padding to the front side for spacing */
+  }
+  
+  /* Styling for the card when hovered */
+  .card:hover .front {
+    transform: rotateY(-180deg); /* Rotate the front side to -180 degrees on hover, creating a flip effect */
+  }
+  
+  .card:hover .back {
+    transform: rotateY(0); /* Reset the rotation of the back side to 0 degrees on hover */
+  }
+  
+  /* Styling for the card logo */
+  .card-logo {
+    display: flex; /* Use flexbox to align the logo and text */
+    align-items: center; /* Center the logo and text vertically */
+    justify-content: space-between; /* Create equal spacing between the logo and text */
+  }
+  
+  .card-logo img {
+    height: 80px; /* Set the height of the logo image */
+    width: 80px; /* Automatically adjust the width of the logo image */
+  }
+  
+  /* Styling for the card number */
+  .card-number {
+    font-size: 35px; /* Set the font size of the card number */
+    font-weight: bold; /* Set the font weight to bold */
+    color: #fff; /* Set the text color to white */
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+  }
+  
+  /* Styling for the card holder, expiry, and CVV */
+  .card-holder,
+  .card-expiry,
+  .card-cvv {
+    font-size: 16px; /* Set the font size of the card holder, expiry, and CVV */
+    color: #fff; /* Set the text color to white */
+  }
+  
+  /* Styling for the card expiry and CVV */
+  .card-expiry-cvv {
+    display: flex; /* Use flexbox to align the expiry and CVV */
+    justify-content: space-between; /* Create equal spacing between the expiry and CVV */
+  }
+  
+  /* Styling for the form group label */
+  .form-group label {
+    font-weight: bold; /* Set the font weight to bold */
+    color: #333; /* Set the text color to a dark gray */
+  }
+  
+  /* Styling for the success and error messages */
+  #success-message,
+  #error-message {
+    margin-top: 20px; /* Add top margin for spacing */
+  }
+  
+  #success-message h4,
+  #error-message h4 {
+    color: #007bff; /* Set the text color to a light blue */
+    font-weight: bold; /* Set the font weight to bold */
+  }
+  
+  /* Styling for the flipped card */
+  .card.flipped .front {
+    transform: rotateY(180deg); /* Rotate the front side to 180 degrees when the card is flipped */
+  }
+  
+  .card.flipped .back {
+    transform: rotateY(0); /* Reset the rotation of the back side to 0 degrees when the card is flipped */
+  }
+  
+  /* Styling for the valid input fields */
+  .valid {
+    border: 2px solid green; /* Add a green border to indicate valid input */
+  }
+  
+
+
+  
+
+
+  
